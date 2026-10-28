@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Dark Motors Fest 2026 – Halloween 31 Oct</title>
+  <title>Daikoku Halloween Vibes 2026 – 31 Oct</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel:wght@600;700;900&family=Playfair+Display:ital,wght@1,600&family=Oswald:wght@400;600&family=Rajdhani:wght@600;700&display=swap');
@@ -61,10 +61,10 @@
     }
     .card-content{position:relative;z-index:2;}
 
-    .top-spacer{height:255px;}
+    .top-spacer{height:250px;}
 
     .info-panel{
-      padding:10px 22px 0;
+      padding:10px 20px 0;
       text-align:center;
     }
 
@@ -78,20 +78,65 @@
       mix-blend-mode:color-burn;
     }
 
+    /* ── TITULO CON SANGRE CALLENDO / GOTEO ── */
+    .title-wrapper{
+      position:relative;
+      display:inline-block;
+      margin-top:2px;
+      padding-bottom:12px;
+    }
+    
     .title-main{
-      font-family:'Cinzel', serif;
-      font-weight:900;
-      font-size:2.55rem;
-      line-height:0.98;
-      letter-spacing:3px;
-      color:#50040a;
+      font-family:'Creepster', cursive;
+      font-size:2.85rem;
+      line-height:0.96;
+      letter-spacing:2px;
+      color:#720008;
       text-transform:uppercase;
       text-shadow:
-        1px 1px 0px rgba(255,220,200,0.35),
-        -1px -1px 0px rgba(0,0,0,0.7),
-        0 0 12px rgba(139,0,0,0.5);
-      mix-blend-mode:darken;
-      margin-top:2px;
+        1px 1px 0px rgba(255,200,190,0.4),
+        -1px -1px 0px #1a0002,
+        0 2px 4px #000,
+        0 0 16px rgba(180,0,0,0.85);
+      position:relative;
+      z-index:2;
+      filter:drop-shadow(0 4px 6px rgba(100,0,0,0.8));
+    }
+
+    /* Gotas de sangre goteando desde las letras */
+    .blood-drips{
+      position:absolute;
+      left:0;right:0;
+      bottom:2px;
+      height:24px;
+      pointer-events:none;
+      z-index:3;
+    }
+    .drop{
+      position:absolute;
+      top:0;
+      width:4px;
+      background:linear-gradient(to bottom, #720008, #b3000f);
+      border-radius:0 0 5px 5px;
+      box-shadow:0 0 4px #4a0005;
+      animation:dripBlood var(--speed, 2.6s) ease-in infinite;
+      transform-origin:top;
+    }
+    .drop::after{
+      content:'';
+      position:absolute;
+      bottom:-2px;left:-1px;
+      width:6px;height:6px;
+      background:#b3000f;
+      border-radius:50%;
+      box-shadow:0 0 3px #ff0015;
+    }
+
+    @keyframes dripBlood{
+      0%   { height: 0px; opacity: 0.9; }
+      55%  { height: var(--len, 16px); opacity: 1; }
+      80%  { height: var(--len, 16px); opacity: 1; transform: translateY(0); }
+      100% { height: var(--len, 16px); opacity: 0; transform: translateY(12px); }
     }
 
     .title-sub{
@@ -102,12 +147,12 @@
       color:#3a070c;
       text-transform:uppercase;
       text-shadow:1px 1px 1px rgba(255,255,255,0.25);
-      margin-top:4px;
+      margin-top:2px;
     }
 
     .vintage-ornament{
       display:flex;align-items:center;justify-content:center;
-      gap:8px;margin:10px 0;opacity:.75;color:#4a080d;
+      gap:8px;margin:8px 0;opacity:.75;color:#4a080d;
     }
     .ornament-line{
       flex:1;height:1px;
@@ -260,7 +305,21 @@
 
     <div class="info-panel">
       <p class="vintage-label">Estás cordialmente invitado a vivir</p>
-      <h1 class="title-main">DARK MOTORS FEST</h1>
+
+      <!-- TÍTULO CON EFECTO DE SANGRE CHORREANDO -->
+      <div class="title-wrapper">
+        <h1 class="title-main">DAIKOKU<br>HALLOWEEN VIBES</h1>
+        <div class="blood-drips">
+          <span class="drop" style="left:8%; --len:14px; --speed:2.4s; animation-delay:0.2s;"></span>
+          <span class="drop" style="left:22%; --len:20px; --speed:2.9s; animation-delay:0.8s;"></span>
+          <span class="drop" style="left:38%; --len:16px; --speed:2.2s; animation-delay:0.4s;"></span>
+          <span class="drop" style="left:52%; --len:22px; --speed:3.1s; animation-delay:1.1s;"></span>
+          <span class="drop" style="left:68%; --len:15px; --speed:2.5s; animation-delay:0.5s;"></span>
+          <span class="drop" style="left:82%; --len:18px; --speed:2.7s; animation-delay:0.9s;"></span>
+          <span class="drop" style="left:92%; --len:13px; --speed:2.3s; animation-delay:0.3s;"></span>
+        </div>
+      </div>
+
       <p class="title-sub">Exhibición de Autos &amp; Motos</p>
 
       <div class="vintage-ornament">
@@ -321,7 +380,7 @@
       </div>
     </div>
 
-    <div class="footer">Dark Motors Fest · Edición Halloween 2026</div>
+    <div class="footer">Daikoku Halloween Vibes · Edición 2026</div>
   </div>
 </div>
 
@@ -329,7 +388,7 @@
 (()=>{const c=document.getElementById('starsContainer');for(let i=0;i<70;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*1.8+.5;s.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;--d:'+(Math.random()*4+1.5).toFixed(1)+'s;--o:'+(Math.random()*.5+.2).toFixed(2)+';animation-delay:'+(Math.random()*5).toFixed(2)+'s;';c.appendChild(s);}})();
 (()=>{const svg='<svg viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg"><path d="M30 14 C20 2,2 4,0 14 C6 12,10 16,12 20 C14 18,18 16,20 18 C22 16,26 12,30 14 C34 12,38 16,40 18 C42 16,46 18,48 20 C50 16,54 12,60 14 C58 4,40 2,30 14Z"/><ellipse cx="30" cy="20" rx="5" ry="4"/></svg>';for(let i=0;i<4;i++){const b=document.createElement('div');b.className='bat';b.innerHTML=svg;b.style.cssText='--sy:'+(Math.random()*45+5)+'vh;--dy:'+(Math.random()*20-10).toFixed(0)+'px;animation-duration:'+(Math.random()*8+10).toFixed(1)+'s;animation-delay:'+(Math.random()*-12).toFixed(1)+'s;top:0;';document.body.appendChild(b);}})();
 
-/* ══ AUDIO 100% AUTOMÁTICO (SIN BOTONES) ══ */
+/* ══ AUDIO 100% AUTOMÁTICO ══ */
 let audioCtx = null;
 let masterGain = null;
 let isStarted = false;
@@ -416,11 +475,9 @@ function startHeartbeatLoop() {
   }, Math.round(interval * 900));
 }
 
-// 1. Intento inmediato al cargar la página
 window.addEventListener('DOMContentLoaded', initAudio);
 window.addEventListener('load', initAudio);
 
-// 2. Desbloqueo transparente en cualquier interacción pasiva (tocar, deslizar, mover dedo)
 const passiveEvents = ['touchstart', 'touchend', 'touchmove', 'click', 'scroll', 'pointerdown'];
 passiveEvents.forEach(evt => {
   window.addEventListener(evt, () => {
